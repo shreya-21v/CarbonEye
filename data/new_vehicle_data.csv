@@ -1,4 +1,4 @@
-vehicle_no,vehicle_type,fuel_type,vehicle_age,engine_cc,mileage,monthly_distance,last_service_months,engine_condition,fuel_monthly
-TN11AA1111,Car,Petrol,6,1500,15,1000,5,6,67
-TN12BB2222,Truck,Diesel,9,5000,6,2200,7,5,366
-TN13CC3333,Bike,Petrol,2,150,48,600,2,9,12
+vehicle_no,vehicle_type,fuel_type,vehicle_age,engine_cc,mileage,monthly_distance,last_service_months,engine_condition,fuel_monthly,City
+TN11AA1111,Car,Petrol,6,1500,15,1000,5,6,67,Bangalore
+TN12BB2222,Truck,Diesel,9,5000,6,2200,7,5,366,Chennai
+TN13CC3333,Bike,Petrol,2,150,48,600,2,9,12,Bangalore

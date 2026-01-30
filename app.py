@@ -136,12 +136,11 @@ if st.button("Show Pollution Map"):
         map_vehicles = vehicles[vehicles['Status'] == 'HIGH'].copy()
         map_industries = industries[industries['Status'] == 'HIGH'].copy()
 
-        # Add random coordinates (simulated locations)
-        map_vehicles["lat"] = np.random.uniform(12.8, 13.2, size=len(map_vehicles))
-        map_vehicles["lon"] = np.random.uniform(77.4, 77.8, size=len(map_vehicles))
+        # Use real coordinates from processed data
+        map_vehicles = map_vehicles[['lat','lon','Predicted_CO2']]
+        map_industries = map_industries[['lat','lon','Predicted_CO2']]
 
-        map_industries["lat"] = np.random.uniform(12.8, 13.2, size=len(map_industries))
-        map_industries["lon"] = np.random.uniform(77.4, 77.8, size=len(map_industries))
+        
 
         # Combine both
         map_data = pd.concat([
