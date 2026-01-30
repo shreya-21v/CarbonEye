@@ -1,0 +1,4 @@
+Industry_Name,Industry_Type,Fuel_Used,Electricity_kWh,Production_Tons,Waste_Tons,Fuel_Consumption,Operating_Hours,Machinery_Age,Pollution_Control
+Alpha Steel,Steel,Coal,80000,1800,150,500,720,15,No
+Green Textiles,Textile,Gas,15000,500,30,120,520,7,Yes
+City Power,Power,Coal,160000,6000,350,950,730,22,No

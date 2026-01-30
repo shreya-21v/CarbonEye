@@ -1,0 +1,4 @@
+vehicle_no,vehicle_type,fuel_type,vehicle_age,engine_cc,mileage,monthly_distance,last_service_months,engine_condition,fuel_monthly,Predicted_CO2,Status
+TN11AA1111,1,1,6,1500,15,1000,5,6,67,124.83340000000004,HIGH
+TN12BB2222,2,0,9,5000,6,2200,7,5,366,293.74789999999996,HIGH
+TN13CC3333,0,1,2,150,48,600,2,9,12,45.527999999999984,SAFE
