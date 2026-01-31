@@ -1,14 +1,15 @@
 import pandas as pd
 import joblib
-from sklearn.preprocessing import LabelEncoder
 
 # Loading trained models
 vehicle_model = joblib.load('models/vehicle_model.pkl')
 industry_model = joblib.load('models/industry_model.pkl')
 
+
 VEHICLE_THRESHOLD = 120
 INDUSTRY_THRESHOLD = 500
 
+from sklearn.preprocessing import LabelEncoder
 
 def process_vehicle_data():
     df = pd.read_csv('data/new_vehicle_data.csv')
@@ -20,9 +21,7 @@ def process_vehicle_data():
     df['fuel_type'] = le_fuel.fit_transform(df['fuel_type'])
     df['vehicle_type'] = le_type.fit_transform(df['vehicle_type'])
 
-
-    features = df.drop(columns=['vehicle_no', 'City', 'lat', 'lon'])
-
+    features = df.drop(columns=['vehicle_no'])
     predictions = vehicle_model.predict(features)
 
     df['Predicted_CO2'] = predictions
@@ -42,10 +41,7 @@ def process_industry_data():
     df['Fuel_Used'] = le_fuel.fit_transform(df['Fuel_Used'])
     df['Pollution_Control'] = df['Pollution_Control'].map({'Yes':1,'No':0})
 
-    # 🚫 DO NOT calculate lat/lon here
-
-    features = df.drop(columns=['Industry_Name', 'City', 'lat', 'lon'])
-
+    features = df.drop(columns=['Industry_Name'])
     predictions = industry_model.predict(features)
 
     df['Predicted_CO2'] = predictions

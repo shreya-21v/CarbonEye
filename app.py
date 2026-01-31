@@ -4,7 +4,7 @@ from src.prediction_engine import process_vehicle_data, process_industry_data
 
 st.set_page_config(page_title="Carbon Emission Monitoring", layout="wide")
 
-st.title("🌍 AI-Based Carbon Emission Monitoring Dashboard")
+st.title("🌍 CarbonEye AI")
 
 st.markdown("### Automated detection of high-emission vehicles and industries")
 
@@ -136,11 +136,12 @@ if st.button("Show Pollution Map"):
         map_vehicles = vehicles[vehicles['Status'] == 'HIGH'].copy()
         map_industries = industries[industries['Status'] == 'HIGH'].copy()
 
-        # Use real coordinates from processed data
-        map_vehicles = map_vehicles[['lat','lon','Predicted_CO2']]
-        map_industries = map_industries[['lat','lon','Predicted_CO2']]
+        # Add random coordinates (simulated locations)
+        map_vehicles["lat"] = np.random.uniform(12.8, 13.2, size=len(map_vehicles))
+        map_vehicles["lon"] = np.random.uniform(77.4, 77.8, size=len(map_vehicles))
 
-        
+        map_industries["lat"] = np.random.uniform(12.8, 13.2, size=len(map_industries))
+        map_industries["lon"] = np.random.uniform(77.4, 77.8, size=len(map_industries))
 
         # Combine both
         map_data = pd.concat([
@@ -167,4 +168,3 @@ if st.button("Show Pollution Map"):
 
     except:
         st.warning("Run emission analysis first.")
-
