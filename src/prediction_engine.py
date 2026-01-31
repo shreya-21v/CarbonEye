@@ -56,10 +56,3 @@ def process_industry_data():
 
 geolocator = Nominatim(user_agent="emission_app")
 
-def get_lat_lon(city):
-    location = geolocator.geocode(city)
-    if location:
-        return location.latitude, location.longitude
-    else:
-        return None, None
-
